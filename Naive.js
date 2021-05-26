@@ -2,31 +2,21 @@
 
 var fs = require("fs"); // should allow us to use the system class to read other files. 
 
+let counter = 0;
 
-// try {  
-//     var data = fs.readFileSync('test.txt', 'utf8' );
-//     console.log(data.toString());    
-// } catch(e) {
-//     console.log('Error:', e.stack);
-// }
+const text=fs.readFileSync('test.txt', 'utf8');
+console.log(text);
+console.log(text.length);
 
+//console.log(text.substring(0, 16));
 
-
-// try {  
-//     var data2 = fs.readFile('test.txt', function(err, data) {
-//         res.write(data);
-//         return res.end();
-//       }); );
-
-//     console.log(data.toString());    
-// } catch(e) {
-//     console.log('Error:', e.stack);
-// }
-
-// fs.readFile('test.txt', 'utf8', function(err, data) {
-//     if (err) throw err;
-//     console.log(data);
-// });
-
-const text=fs.readFileSync('.\\test.txt', 'utf8')
-console.log('SUCCESSFULL RUN');
+for(let i = 0; i < text.length; i++) {
+    let substring = text.substring(i, i + 14)
+    //console.log(substring);
+ if (substring === '@softwire.com ') { 
+     
+    counter++;
+    //console.log(counter);
+}
+}
+console.log('@softwire.com appeared '+ counter + ' times');
