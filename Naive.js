@@ -14,7 +14,7 @@ let arrDebug = new Array();
 for(let i = 0; i < text.length; i++) {
     let substring = text.substring(i, i + 14)
     //console.log(substring);
- if ((substring === '@softwire.com ') || (substring === '@softwire.com\\n'))  { 
+ if ((substring === '@softwire.com ') || (substring === '@softwire.com\r\n'))  { 
      
     arrDebug.push(text.substring(i-3, i + 14));
     counter++;
